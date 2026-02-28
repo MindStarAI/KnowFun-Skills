@@ -190,7 +190,7 @@ source ~/.bashrc
 
 ```bash
 # Test API connectivity
-cd /Users/jamson/code/knowfun-skills
+cd /path/to/knowfun-skills
 ./scripts/test-api.sh
 ```
 

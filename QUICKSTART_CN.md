@@ -39,7 +39,7 @@ source ~/.zshrc
 运行测试脚本以验证一切正常：
 
 ```bash
-cd /Users/jamson/code/knowfun-skills
+cd /path/to/knowfun-skills
 ./scripts/test-api.sh
 ```
 
