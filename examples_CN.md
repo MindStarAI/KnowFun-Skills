@@ -222,7 +222,7 @@ curl -X POST https://api.knowfun.io/api/openapi/v1/tasks \
 - 游戏: 100 积分
 - 视频: 100 积分
 
-充值地址: https://www.knowfun.io/credits
+获取更多积分: https://www.knowfun.io/api-platform
 ```
 
 ---
@@ -462,7 +462,7 @@ case $http_code in
     echo "❌ 认证失败。检查你的 API key。"
     ;;
   402)
-    echo "❌ 积分不足。访问 https://www.knowfun.io/credits 充值"
+    echo "❌ 积分不足。访问 https://www.knowfun.io/api-platform 充值"
     ;;
   429)
     echo "⚠️ 超出速率限制。请等待后重试。"
@@ -586,7 +586,7 @@ curl --max-time 300 ...
 # 检查余额
 /knowfun credits
 
-# 访问 https://www.knowfun.io/credits 充值
+# 访问 https://www.knowfun.io/api-platform 充值
 ```
 
 ### 问题："超出速率限制"

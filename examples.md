@@ -90,7 +90,7 @@ Create a documentary-style video:
 Using curl directly (Claude can help construct this):
 
 ```bash
-curl -X POST https://knowfun.io/api/openapi/v1/tasks \
+curl -X POST https://api.knowfun.io/api/openapi/v1/tasks \
   -H "Authorization: Bearer $KNOWFUN_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -222,7 +222,7 @@ Locked: 100 credits
 - Game: 100 credits
 - Film: 100 credits
 
-Top up at: https://www.knowfun.io/credits
+Get more credits at: https://www.knowfun.io/api-platform
 ```
 
 ---
@@ -250,7 +250,7 @@ Using the skill (Claude will construct the curl command):
 
 Or using curl directly:
 ```bash
-curl -X POST https://knowfun.io/api/openapi/v1/tasks \
+curl -X POST https://api.knowfun.io/api/openapi/v1/tasks \
   -H "Authorization: Bearer $KNOWFUN_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -278,7 +278,7 @@ curl -X POST https://knowfun.io/api/openapi/v1/tasks \
 Create a poster with custom style:
 
 ```bash
-curl -X POST https://knowfun.io/api/openapi/v1/tasks \
+curl -X POST https://api.knowfun.io/api/openapi/v1/tasks \
   -H "Authorization: Bearer $KNOWFUN_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -306,7 +306,7 @@ curl -X POST https://knowfun.io/api/openapi/v1/tasks \
 Create a story-driven game:
 
 ```bash
-curl -X POST https://knowfun.io/api/openapi/v1/tasks \
+curl -X POST https://api.knowfun.io/api/openapi/v1/tasks \
   -H "Authorization: Bearer $KNOWFUN_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -331,7 +331,7 @@ curl -X POST https://knowfun.io/api/openapi/v1/tasks \
 Create a step-by-step tutorial video:
 
 ```bash
-curl -X POST https://knowfun.io/api/openapi/v1/tasks \
+curl -X POST https://api.knowfun.io/api/openapi/v1/tasks \
   -H "Authorization: Bearer $KNOWFUN_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -357,7 +357,7 @@ curl -X POST https://knowfun.io/api/openapi/v1/tasks \
 Create a course from a YouTube video:
 
 ```bash
-curl -X POST https://knowfun.io/api/openapi/v1/tasks \
+curl -X POST https://api.knowfun.io/api/openapi/v1/tasks \
   -H "Authorization: Bearer $KNOWFUN_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -388,7 +388,7 @@ Create a simple monitoring script:
 TASK_ID="c3199fb3-350b-4981-858d-09b949bfae88"
 
 while true; do
-  STATUS=$(curl -s "https://knowfun.io/api/openapi/v1/tasks/$TASK_ID" \
+  STATUS=$(curl -s "https://api.knowfun.io/api/openapi/v1/tasks/$TASK_ID" \
     -H "Authorization: Bearer $KNOWFUN_API_KEY" | jq -r '.data.status')
 
   echo "Current status: $STATUS"
@@ -416,7 +416,7 @@ TOPICS=("Python Basics" "JavaScript Fundamentals" "CSS Flexbox" "Git Workflow")
 for topic in "${TOPICS[@]}"; do
   echo "Creating course for: $topic"
 
-  curl -X POST https://knowfun.io/api/openapi/v1/tasks \
+  curl -X POST https://api.knowfun.io/api/openapi/v1/tasks \
     -H "Authorization: Bearer $KNOWFUN_API_KEY" \
     -H "Content-Type: application/json" \
     -d "{
@@ -439,7 +439,7 @@ done
 Handle common errors gracefully:
 
 ```bash
-response=$(curl -s -w "\n%{http_code}" https://knowfun.io/api/openapi/v1/tasks \
+response=$(curl -s -w "\n%{http_code}" https://api.knowfun.io/api/openapi/v1/tasks \
   -X POST \
   -H "Authorization: Bearer $KNOWFUN_API_KEY" \
   -H "Content-Type: application/json" \
@@ -462,7 +462,7 @@ case $http_code in
     echo "❌ Authentication failed. Check your API key."
     ;;
   402)
-    echo "❌ Insufficient credits. Top up at https://www.knowfun.io/credits"
+    echo "❌ Insufficient credits. Top up at https://www.knowfun.io/api-platform"
     ;;
   429)
     echo "⚠️ Rate limit exceeded. Please wait and try again."
@@ -480,7 +480,7 @@ esac
 Get detailed usage statistics:
 
 ```bash
-curl -s "https://knowfun.io/api/openapi/usage?page=1&pageSize=20" \
+curl -s "https://api.knowfun.io/api/openapi/usage?page=1&pageSize=20" \
   -H "Authorization: Bearer $KNOWFUN_API_KEY" | jq '{
     total_credits: .data.summary.totalCreditsUsed,
     total_tasks: .data.summary.taskCount,
@@ -533,7 +533,7 @@ echo "$TASK_ID" >> task_history.txt
 ### 6. Use Verbose Mode for Debugging
 When troubleshooting, use verbose mode:
 ```bash
-curl -v https://knowfun.io/api/openapi/v1/tasks/...
+curl -v https://api.knowfun.io/api/openapi/v1/tasks/...
 ```
 
 ### 7. Set Timeouts
@@ -591,7 +591,7 @@ curl --max-time 300 ...
 # Check balance
 /knowfun credits
 
-# Top up at https://www.knowfun.io/credits
+# Top up at https://www.knowfun.io/api-platform
 ```
 
 ### Issue: "Rate Limit Exceeded"
@@ -608,5 +608,5 @@ sleep 60
 # Verify API key
 echo $KNOWFUN_API_KEY
 
-# Regenerate if needed at https://knowfun.io/api-platform
+# Regenerate if needed at https://www.knowfun.io/api-platform
 ```

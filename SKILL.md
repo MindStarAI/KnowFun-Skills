@@ -14,7 +14,7 @@ This skill helps you interact with the Knowfun.io OpenAPI to generate educationa
 ## Prerequisites
 
 Before using this skill, you need:
-1. A Knowfun.io API Key (get it from https://knowfun.io/api-platform)
+1. A Knowfun.io API Key (get it from https://www.knowfun.io/api-platform)
 2. Sufficient credits in your account
 
 ## Configuration

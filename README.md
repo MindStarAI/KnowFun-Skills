@@ -1,8 +1,11 @@
-# Knowfun.io Claude Code Skill
+# Knowfun Skills - Multi-Platform AI Integration
 
 English | [简体中文](README_CN.md)
 
-A Claude Code skill for interacting with the Knowfun.io OpenAPI to generate educational content, posters, games, and films.
+Multi-platform AI coding assistant integration for Knowfun.io API. Generate educational content, posters, games, and films using Claude Code, Cursor, or Cline.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Platform](https://img.shields.io/badge/Platform-Claude%20Code%20%7C%20Cursor%20%7C%20Cline-orange.svg)](PLATFORM_COMPARISON.md)
 
 ## What is Knowfun.io?
 
@@ -14,79 +17,79 @@ Knowfun.io is an AI-powered platform that transforms text and documents into eng
 
 ## Features
 
-This skill enables you to:
+### Platform Support
+- 🎯 **Claude Code** - Native `/knowfun` skill commands
+- 🎯 **Cursor** - CLI tool + rules integration
+- 🎯 **Cline** - CLI tool + JSON config
+
+### Capabilities
 - ✅ Create content generation tasks via natural language
 - ✅ Monitor task status and progress
 - ✅ Retrieve generated content
 - ✅ Manage credits and API usage
 - ✅ Get configuration options and schemas
+- ✅ Multi-language support (English + 简体中文)
 
-## Installation
+## Quick Start
 
-### Option 1: Personal Skill (Available in All Projects)
+Choose your platform:
 
-```bash
-mkdir -p ~/.claude/skills/knowfun
-cp -r * ~/.claude/skills/knowfun/
-```
+- **Claude Code**: See [Claude Code Installation](INSTALLATION.md#claude-code-installation)
+- **Cursor**: See [Cursor Installation](INSTALLATION.md#cursor-installation)
+- **Cline**: See [Cline Installation](INSTALLATION.md#cline-installation)
 
-### Option 2: Project Skill (This Project Only)
-
-```bash
-# Already set up in this project!
-# Files are in: /Users/jamson/code/knowfun-skills/
-```
+Or follow the [5-Minute Quickstart Guide](QUICKSTART.md)
 
 ## Setup
 
 1. **Get an API Key**
-   - Visit https://knowfun.io/api-platform
-   - Create a new API key
+   - Visit https://www.knowfun.io/api-platform
+   - Click "Create API Key"
    - Copy the key (starts with `kf_`)
 
-2. **Set Environment Variable**
+2. **Configure Environment**
    ```bash
+   # Temporary (current session)
    export KNOWFUN_API_KEY="kf_your_api_key_here"
-   ```
 
-3. **Or Add to Your Shell Profile**
-   ```bash
+   # Permanent (add to shell profile)
    echo 'export KNOWFUN_API_KEY="kf_your_api_key_here"' >> ~/.zshrc
    source ~/.zshrc
    ```
 
 ## Usage
 
-### Basic Commands
+### Claude Code
 
 ```bash
-# Create a course
+# Use native slash commands
 /knowfun create course "Introduction to Python"
-
-# Create a poster
 /knowfun create poster "Climate Change Facts"
-
-# Create a game
-/knowfun create game "Learn JavaScript Basics"
-
-# Create a film
-/knowfun create film "History of the Internet"
-
-# Check task status
 /knowfun status <taskId>
-
-# Get task details
-/knowfun detail <taskId>
-
-# List recent tasks
-/knowfun list
-
-# Check credit balance
 /knowfun credits
-
-# Get configuration schema
-/knowfun schema
 ```
+
+### Cursor / Cline
+
+```bash
+# Use CLI tool directly
+knowfun create course "Introduction to Python"
+knowfun create poster "Climate Change Facts"
+knowfun status <taskId>
+knowfun credits
+
+# Or ask your AI assistant
+"Use knowfun to create a course about Python"
+```
+
+### All Commands
+
+- `create <type> <content>` - Generate content (course/poster/game/film)
+- `status <taskId>` - Check task status
+- `detail <taskId>` - Get detailed results
+- `list [limit]` - List recent tasks
+- `credits` - Check credit balance
+- `schema` - Get configuration options
 
 ### Examples
 
@@ -164,9 +167,9 @@ Each task type costs credits:
 - **Game**: 100 credits (default)
 - **Film**: 100 credits (default)
 
-Check your balance: `/knowfun credits`
+Check your balance: `/knowfun credits` or `knowfun credits`
 
-Top up at: https://www.knowfun.io/credits
+**Get more credits**: Visit https://www.knowfun.io/api-platform to manage your account
 
 ## Rate Limits
 

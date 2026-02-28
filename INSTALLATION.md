@@ -23,7 +23,7 @@ This guide covers installation for Claude Code, Cursor, and Cline.
 ```bash
 # Copy to personal skills directory
 mkdir -p ~/.claude/skills/knowfun
-cp -r /Users/jamson/code/knowfun-skills/* ~/.claude/skills/knowfun/
+cp -r $(pwd)/* ~/.claude/skills/knowfun/
 ```
 
 ### Method 2: Project-Specific (Single Project)
@@ -66,10 +66,10 @@ Cursor doesn't have a native skill system like Claude Code, but you can use the 
 
 ```bash
 # Make the CLI tool accessible globally
-sudo ln -s /Users/jamson/code/knowfun-skills/scripts/knowfun-cli.sh /usr/local/bin/knowfun
+sudo ln -s $(pwd)/scripts/knowfun-cli.sh /usr/local/bin/knowfun
 
 # Or add to PATH
-echo 'export PATH="/Users/jamson/code/knowfun-skills/scripts:$PATH"' >> ~/.zshrc
+echo 'export PATH="$(pwd)/scripts:$PATH"' >> ~/.zshrc
 source ~/.zshrc
 ```
 
@@ -88,7 +88,7 @@ echo 'export KNOWFUN_API_KEY="kf_your_api_key_here"' >> ~/.zshrc
 Create `.cursorrules` in your project root:
 
 ```bash
-cp /Users/jamson/code/knowfun-skills/integrations/cursor/.cursorrules .
+cp $(pwd)/integrations/cursor/.cursorrules .
 ```
 
 ### Verification
@@ -121,7 +121,7 @@ Cursor will execute: `knowfun create course "Python basics"`
 
 ```bash
 # Make CLI accessible
-sudo ln -s /Users/jamson/code/knowfun-skills/scripts/knowfun-cli.sh /usr/local/bin/knowfun
+sudo ln -s $(pwd)/scripts/knowfun-cli.sh /usr/local/bin/knowfun
 ```
 
 ### Step 2: Configure API Key
@@ -136,7 +136,7 @@ Create `.cline/knowfun.json` in your project:
 
 ```bash
 mkdir -p .cline
-cp /Users/jamson/code/knowfun-skills/integrations/cline/knowfun.json .cline/
+cp $(pwd)/integrations/cline/knowfun.json .cline/
 ```
 
 ### Verification
@@ -279,7 +279,7 @@ sudo ln -s $(pwd)/scripts/knowfun-cli.sh /usr/local/bin/knowfun
 which knowfun
 
 # If not found, add to PATH
-export PATH="/Users/jamson/code/knowfun-skills/scripts:$PATH"
+export PATH="$(pwd)/scripts:$PATH"
 ```
 
 ### Issue: API Key not found
@@ -298,7 +298,7 @@ export KNOWFUN_API_KEY="kf_your_key"
 **Solution:**
 ```bash
 # Make scripts executable
-chmod +x /Users/jamson/code/knowfun-skills/scripts/*.sh
+chmod +x $(pwd)/scripts/*.sh
 ```
 
 ---

@@ -23,7 +23,7 @@
 ```bash
 # 复制到个人技能目录
 mkdir -p ~/.claude/skills/knowfun
-cp -r /Users/jamson/code/knowfun-skills/* ~/.claude/skills/knowfun/
+cp -r $(pwd)/* ~/.claude/skills/knowfun/
 ```
 
 ### 方法 2：项目专用（单个项目）
@@ -66,10 +66,10 @@ Cursor 没有像 Claude Code 那样的原生技能系统，但你可以使用 **
 
 ```bash
 # 使 CLI 工具全局可访问
-sudo ln -s /Users/jamson/code/knowfun-skills/scripts/knowfun-cli.sh /usr/local/bin/knowfun
+sudo ln -s $(pwd)/scripts/knowfun-cli.sh /usr/local/bin/knowfun
 
 # 或添加到 PATH
-echo 'export PATH="/Users/jamson/code/knowfun-skills/scripts:$PATH"' >> ~/.zshrc
+echo 'export PATH="$(pwd)/scripts:$PATH"' >> ~/.zshrc
 source ~/.zshrc
 ```
 
@@ -88,7 +88,7 @@ echo 'export KNOWFUN_API_KEY="kf_your_api_key_here"' >> ~/.zshrc
 在项目根目录创建 `.cursorrules`：
 
 ```bash
-cp /Users/jamson/code/knowfun-skills/integrations/cursor/.cursorrules .
+cp $(pwd)/integrations/cursor/.cursorrules .
 ```
 
 ### 验证安装
@@ -121,7 +121,7 @@ Cursor 会执行：`knowfun create course "Python 基础"`
 
 ```bash
 # 使 CLI 可访问
-sudo ln -s /Users/jamson/code/knowfun-skills/scripts/knowfun-cli.sh /usr/local/bin/knowfun
+sudo ln -s $(pwd)/scripts/knowfun-cli.sh /usr/local/bin/knowfun
 ```
 
 ### 步骤 2：配置 API Key
@@ -136,7 +136,7 @@ export KNOWFUN_API_KEY="kf_your_api_key_here"
 
 ```bash
 mkdir -p .cline
-cp /Users/jamson/code/knowfun-skills/integrations/cline/knowfun.json .cline/
+cp $(pwd)/integrations/cline/knowfun.json .cline/
 ```
 
 ### 验证安装
@@ -279,7 +279,7 @@ sudo ln -s $(pwd)/scripts/knowfun-cli.sh /usr/local/bin/knowfun
 which knowfun
 
 # 如果未找到，添加到 PATH
-export PATH="/Users/jamson/code/knowfun-skills/scripts:$PATH"
+export PATH="$(pwd)/scripts:$PATH"
 ```
 
 ### 问题：未找到 API Key
@@ -298,7 +298,7 @@ export KNOWFUN_API_KEY="kf_your_key"
 **解决方案：**
 ```bash
 # 使脚本可执行
-chmod +x /Users/jamson/code/knowfun-skills/scripts/*.sh
+chmod +x $(pwd)/scripts/*.sh
 ```
 
 ---

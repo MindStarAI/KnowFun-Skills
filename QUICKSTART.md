@@ -6,19 +6,19 @@ Get started with the Knowfun.io Claude Code Skill in 5 minutes!
 
 ## Step 1: Install (30 seconds)
 
-This skill is already installed in your project at `/Users/jamson/code/knowfun-skills/`.
+This skill is already installed in your project at `the knowfun-skills directory`.
 
 To make it available globally in all your projects:
 
 ```bash
 # Copy to personal skills directory
 mkdir -p ~/.claude/skills/knowfun
-cp -r /Users/jamson/code/knowfun-skills/* ~/.claude/skills/knowfun/
+cp -r the knowfun-skills directory* ~/.claude/skills/knowfun/
 ```
 
 ## Step 2: Get Your API Key (2 minutes)
 
-1. Visit https://knowfun.io/api-platform
+1. Visit https://www.knowfun.io/api-platform
 2. Click "Create API Key"
 3. Give it a name like "My Development Key"
 4. Copy the API key (starts with `kf_`)
@@ -171,7 +171,7 @@ export KNOWFUN_API_KEY="kf_your_key"
 ```
 
 ### Problem: "Insufficient credits"
-**Solution:** Visit https://www.knowfun.io/credits to top up
+**Solution:** Visit https://www.knowfun.io/api-platform to top up
 
 ### Problem: Task stuck in "processing"
 **Solution:** Wait 5-10 minutes. Tasks typically complete in:
@@ -195,7 +195,7 @@ export KNOWFUN_API_KEY="kf_your_key"
 
 - 📚 **Documentation**: See the docs in this directory
 - 🌐 **Web Portal**: https://knowfun.io
-- 🔑 **API Platform**: https://knowfun.io/api-platform
+- 🔑 **API Platform**: https://www.knowfun.io/api-platform
 - 💡 **Examples**: Check [examples.md](examples.md)
 
 ## You're Ready! 🎉

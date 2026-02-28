@@ -6,14 +6,14 @@
 
 ## 第 1 步：安装（30 秒）
 
-此技能已安装在你的项目中：`/Users/jamson/code/knowfun-skills/`。
+此技能已安装在你的项目中：`knowfun-skills 目录`。
 
 要使其在所有项目中全局可用：
 
 ```bash
 # 复制到个人技能目录
 mkdir -p ~/.claude/skills/knowfun
-cp -r /Users/jamson/code/knowfun-skills/* ~/.claude/skills/knowfun/
+cp -r knowfun-skills 目录* ~/.claude/skills/knowfun/
 ```
 
 ## 第 2 步：获取你的 API Key（2 分钟）
@@ -171,7 +171,7 @@ export KNOWFUN_API_KEY="kf_your_key"
 ```
 
 ### 问题："积分不足"
-**解决方案：** 访问 https://www.knowfun.io/credits 充值
+**解决方案：** 访问 https://www.knowfun.io/api-platform 充值
 
 ### 问题：任务卡在 "processing"
 **解决方案：** 等待 5-10 分钟。任务通常完成时间：
