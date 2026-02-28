@@ -1,0 +1,91 @@
+{
+  "name": "knowfun",
+  "version": "1.0.0",
+  "description": "Claude Code skill for interacting with Knowfun.io API to generate educational content, posters, games, and films",
+  "author": "Knowfun.io Team",
+  "license": "MIT",
+  "homepage": "https://knowfun.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/knowfun-skills"
+  },
+  "keywords": [
+    "claude-code",
+    "skill",
+    "knowfun",
+    "education",
+    "content-generation",
+    "ai",
+    "course",
+    "poster",
+    "game",
+    "film"
+  ],
+  "compatibility": {
+    "claude-code": ">=1.0.0"
+  },
+  "features": {
+    "taskTypes": [
+      "course",
+      "poster",
+      "game",
+      "film"
+    ],
+    "operations": [
+      "create",
+      "status",
+      "detail",
+      "list",
+      "credits",
+      "pricing",
+      "schema",
+      "usage"
+    ]
+  },
+  "configuration": {
+    "required": [
+      "KNOWFUN_API_KEY"
+    ],
+    "optional": [
+      "KNOWFUN_BASE_URL",
+      "KNOWFUN_TIMEOUT"
+    ]
+  },
+  "endpoints": {
+    "baseUrl": "https://knowfun.io",
+    "apiVersion": "v1",
+    "paths": {
+      "tasks": "/api/openapi/v1/tasks",
+      "taskById": "/api/openapi/v1/tasks/:taskId",
+      "taskByRequestId": "/api/openapi/v1/tasks/by-request/:requestId",
+      "taskDetail": "/api/openapi/v1/tasks/:taskId/detail",
+      "credits": "/api/openapi/v1/credits/balance",
+      "pricing": "/api/openapi/v1/credits/pricing",
+      "usage": "/api/openapi/usage",
+      "schema": "/api/openapi/v1/schema"
+    }
+  },
+  "credits": {
+    "course": 100,
+    "poster": 100,
+    "game": 100,
+    "film": 100
+  },
+  "rateLimits": {
+    "default": {
+      "perMinute": 60,
+      "perDay": 1000
+    }
+  },
+  "documentation": {
+    "quickstart": "QUICKSTART.md",
+    "readme": "README.md",
+    "apiReference": "api-reference.md",
+    "examples": "examples.md",
+    "changelog": "CHANGELOG.md"
+  },
+  "scripts": {
+    "cli": "scripts/knowfun-cli.sh",
+    "test": "scripts/test-api.sh"
+  }
+}

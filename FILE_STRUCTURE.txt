@@ -1,0 +1,38 @@
+knowfun-skills/ - Knowfun.io Claude Code Skill (Bilingual / 双语版)
+│
+├── 📚 English Documentation
+│   ├── README.md                  # Main overview and setup guide
+│   ├── QUICKSTART.md              # 5-minute getting started tutorial
+│   ├── api-reference.md           # Complete API endpoint documentation
+│   ├── examples.md                # 20+ comprehensive usage examples
+│   ├── SKILL.md                   # Claude Code skill definition
+│   └── CHANGELOG.md               # Version history and updates
+│
+├── 📖 中文文档 (Chinese Documentation)
+│   ├── README_CN.md               # 完整概述和设置指南
+│   ├── QUICKSTART_CN.md           # 5分钟快速入门教程
+│   ├── api-reference_CN.md        # 完整 API 端点文档
+│   └── examples_CN.md             # 20+ 综合使用示例
+│
+├── 🌐 Navigation / 导航
+│   ├── LANGUAGES.md               # Language guide and navigation
+│   └── FILE_STRUCTURE.txt         # This file - directory overview
+│
+├── ⚙️  Configuration / 配置
+│   ├── .env.example               # Environment variable template
+│   ├── .gitignore                 # Git ignore patterns
+│   └── skill.json                 # Skill metadata and configuration
+│
+└── 🔧 Scripts / 脚本
+    ├── knowfun-cli.sh             # Standalone CLI tool (executable)
+    └── test-api.sh                # API connectivity test suite (executable)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Total Files: 16 | English: 6 | Chinese: 4 | Config: 3 | Scripts: 2
+Total Lines: 5,300+ | Languages: 2 (English, 简体中文)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Version: 1.0.0 Bilingual Edition
+Last Updated: 2026-03-01
