@@ -83,5 +83,3 @@ If you'd like to contribute translations to other languages, please:
 
 ---
 
-Made with ❤️ for Claude Code users worldwide
-用 ❤️ 为全球 Claude Code 用户制作

@@ -21,6 +21,7 @@ Knowfun.io is an AI-powered platform that transforms text and documents into eng
 - 🎯 **Claude Code** - Native `/knowfun` skill commands
 - 🎯 **Cursor** - CLI tool + rules integration
 - 🎯 **Cline** - CLI tool + JSON config
+- 🎯 **OpenClaw** - CLI tool + skill definition
 
 ### Capabilities
 - ✅ Create content generation tasks via natural language
@@ -37,6 +38,7 @@ Choose your platform:
 - **Claude Code**: See [Claude Code Installation](INSTALLATION.md#claude-code-installation)
 - **Cursor**: See [Cursor Installation](INSTALLATION.md#cursor-installation)
 - **Cline**: See [Cline Installation](INSTALLATION.md#cline-installation)
+- **OpenClaw**: See [OpenClaw Installation](integrations/openclaw/README.md)
 
 Or follow the [5-Minute Quickstart Guide](QUICKSTART.md)
 
@@ -69,7 +71,7 @@ Or follow the [5-Minute Quickstart Guide](QUICKSTART.md)
 /knowfun credits
 ```
 
-### Cursor / Cline
+### Cursor / Cline / OpenClaw
 
 ```bash
 # Use CLI tool directly
@@ -312,4 +314,3 @@ Copyright (c) 2026 Knowfun.io
 
 ---
 
-Made with ❤️ for Claude Code users

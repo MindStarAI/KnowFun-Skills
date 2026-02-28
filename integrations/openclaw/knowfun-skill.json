@@ -1,0 +1,295 @@
+{
+  "name": "Knowfun Content Generator",
+  "version": "1.0.0",
+  "description": "Generate educational content using Knowfun.io API - create courses, posters, games, and films",
+  "type": "cli-integration",
+  "author": "Knowfun.io",
+  "homepage": "https://www.knowfun.io",
+  "repository": "https://github.com/yourusername/knowfun-skills",
+
+  "prerequisites": {
+    "api_key": {
+      "name": "KNOWFUN_API_KEY",
+      "description": "Your Knowfun.io API key",
+      "obtain_from": "https://www.knowfun.io/api-platform",
+      "format": "kf_XXXXXXXXXXXXXXXXXXXXX"
+    },
+    "cli_tool": {
+      "name": "knowfun",
+      "installation": "ln -s /path/to/knowfun-skills/scripts/knowfun-cli.sh /usr/local/bin/knowfun",
+      "verify": "knowfun credits"
+    }
+  },
+
+  "capabilities": {
+    "content_types": [
+      {
+        "type": "course",
+        "description": "Interactive presentations with narration",
+        "processing_time": "2-5 minutes",
+        "credits_cost": 100
+      },
+      {
+        "type": "poster",
+        "description": "Visual infographics and marketing materials",
+        "processing_time": "1-3 minutes",
+        "credits_cost": 100
+      },
+      {
+        "type": "game",
+        "description": "Interactive learning experiences",
+        "processing_time": "3-7 minutes",
+        "credits_cost": 100
+      },
+      {
+        "type": "film",
+        "description": "Educational videos and documentaries",
+        "processing_time": "5-10 minutes",
+        "credits_cost": 100
+      }
+    ]
+  },
+
+  "commands": {
+    "create": {
+      "description": "Create educational content",
+      "syntax": "knowfun create <type> \"<content>\"",
+      "parameters": {
+        "type": {
+          "required": true,
+          "values": ["course", "poster", "game", "film"],
+          "description": "Type of content to generate"
+        },
+        "content": {
+          "required": true,
+          "type": "string",
+          "description": "Content description or topic"
+        }
+      },
+      "returns": {
+        "taskId": "Unique task identifier for status checking",
+        "status": "Initial task status (usually 'pending')"
+      },
+      "examples": [
+        {
+          "command": "knowfun create course \"Introduction to Python Programming\"",
+          "description": "Create an interactive Python course"
+        },
+        {
+          "command": "knowfun create poster \"Climate Change: Facts and Solutions\"",
+          "description": "Create an infographic about climate change"
+        },
+        {
+          "command": "knowfun create game \"Learn JavaScript Basics\"",
+          "description": "Create an interactive JavaScript learning game"
+        },
+        {
+          "command": "knowfun create film \"History of the Internet\"",
+          "description": "Create an educational video"
+        }
+      ]
+    },
+    "status": {
+      "description": "Check task processing status",
+      "syntax": "knowfun status <taskId>",
+      "parameters": {
+        "taskId": {
+          "required": true,
+          "type": "string",
+          "description": "Task ID returned from create command"
+        }
+      },
+      "returns": {
+        "status": "pending, processing, completed, or failed",
+        "progress": "Processing progress (0-100)",
+        "resultUrl": "Content URL when completed"
+      },
+      "examples": [
+        {
+          "command": "knowfun status c3199fb3-350b-4981-858d-09b949bfae88",
+          "description": "Check if task is complete"
+        }
+      ]
+    },
+    "detail": {
+      "description": "Get detailed task results",
+      "syntax": "knowfun detail <taskId>",
+      "parameters": {
+        "taskId": {
+          "required": true,
+          "type": "string",
+          "description": "Task ID to get details for"
+        }
+      },
+      "returns": {
+        "taskId": "Task identifier",
+        "status": "Task status",
+        "resultUrl": "URL to view content",
+        "coverUrl": "Cover image URL",
+        "createdAt": "Creation timestamp",
+        "completedAt": "Completion timestamp"
+      },
+      "examples": [
+        {
+          "command": "knowfun detail c3199fb3-350b-4981-858d-09b949bfae88",
+          "description": "Get full task details and URLs"
+        }
+      ]
+    },
+    "list": {
+      "description": "List recent tasks",
+      "syntax": "knowfun list [limit]",
+      "parameters": {
+        "limit": {
+          "required": false,
+          "type": "number",
+          "default": 10,
+          "description": "Number of tasks to return"
+        }
+      },
+      "examples": [
+        {
+          "command": "knowfun list",
+          "description": "List last 10 tasks"
+        },
+        {
+          "command": "knowfun list 20",
+          "description": "List last 20 tasks"
+        }
+      ]
+    },
+    "credits": {
+      "description": "Check credit balance",
+      "syntax": "knowfun credits",
+      "returns": {
+        "available": "Available credits",
+        "total_earned": "Total credits earned",
+        "total_used": "Total credits used",
+        "locked": "Credits locked in pending tasks"
+      },
+      "examples": [
+        {
+          "command": "knowfun credits",
+          "description": "Check your credit balance"
+        }
+      ]
+    },
+    "schema": {
+      "description": "Get configuration schema",
+      "syntax": "knowfun schema",
+      "returns": {
+        "course": "Course configuration options",
+        "poster": "Poster configuration options",
+        "game": "Game configuration options",
+        "film": "Film configuration options"
+      },
+      "examples": [
+        {
+          "command": "knowfun schema",
+          "description": "View all configuration options"
+        }
+      ]
+    }
+  },
+
+  "workflow": {
+    "basic": [
+      "1. User requests content creation",
+      "2. Execute: knowfun create <type> \"<content>\"",
+      "3. Note the taskId from response",
+      "4. Wait for processing (2-10 minutes depending on type)",
+      "5. Check status: knowfun status <taskId>",
+      "6. Get results: knowfun detail <taskId>",
+      "7. Share result URL with user"
+    ],
+    "automated": [
+      "1. Create task and capture taskId",
+      "2. Poll status every 30 seconds",
+      "3. When status is 'completed', fetch details",
+      "4. Present resultUrl to user",
+      "5. Handle failures gracefully"
+    ]
+  },
+
+  "error_handling": {
+    "401": {
+      "error": "Unauthorized",
+      "meaning": "Invalid or missing API key",
+      "action": "Check KNOWFUN_API_KEY environment variable"
+    },
+    "402": {
+      "error": "Payment Required",
+      "meaning": "Insufficient credits",
+      "action": "Visit https://www.knowfun.io/api-platform to get more credits"
+    },
+    "429": {
+      "error": "Too Many Requests",
+      "meaning": "Rate limit exceeded",
+      "action": "Wait 60 seconds before retrying"
+    },
+    "404": {
+      "error": "Not Found",
+      "meaning": "Task not found",
+      "action": "Verify the taskId is correct"
+    }
+  },
+
+  "openclaw_integration": {
+    "installation": {
+      "steps": [
+        "1. Clone or download knowfun-skills repository",
+        "2. Make CLI tool accessible: sudo ln -s /path/to/knowfun-skills/scripts/knowfun-cli.sh /usr/local/bin/knowfun",
+        "3. Set API key: export KNOWFUN_API_KEY='kf_your_api_key_here'",
+        "4. Add to OpenClaw's skill directory (if applicable)",
+        "5. Verify: knowfun credits"
+      ]
+    },
+    "usage_patterns": {
+      "direct_cli": {
+        "description": "Execute CLI commands directly from OpenClaw",
+        "example": "knowfun create course \"Machine Learning Basics\""
+      },
+      "natural_language": {
+        "description": "Let OpenClaw interpret and execute",
+        "example": "Create a Knowfun course about machine learning basics"
+      },
+      "automated_workflows": {
+        "description": "Chain multiple operations",
+        "example": "Create a course, wait for completion, then share the URL"
+      }
+    },
+    "remote_access": {
+      "description": "Use OpenClaw via Telegram/WhatsApp for remote content creation",
+      "examples": [
+        "Send message: 'Create a Knowfun course about Python'",
+        "OpenClaw executes: knowfun create course \"Python Programming\"",
+        "Monitors status and sends result URL when ready"
+      ]
+    }
+  },
+
+  "tips": {
+    "best_practices": [
+      "Always check credits before batch operations",
+      "Save taskIds for later reference",
+      "Poll status instead of waiting blindly",
+      "Handle errors gracefully",
+      "Cache results to avoid regeneration"
+    ],
+    "optimization": [
+      "Use detailed content descriptions for better results",
+      "Include key concepts in the content text",
+      "For courses: structure content with clear sections",
+      "For posters: mention visual style preferences",
+      "For games: specify learning objectives",
+      "For films: outline the narrative structure"
+    ]
+  },
+
+  "support": {
+    "documentation": "https://github.com/yourusername/knowfun-skills",
+    "api_platform": "https://www.knowfun.io/api-platform",
+    "website": "https://www.knowfun.io",
+    "issues": "https://github.com/yourusername/knowfun-skills/issues"
+  }
+}

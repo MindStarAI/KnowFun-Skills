@@ -2,7 +2,7 @@
 
 English | [简体中文](INSTALLATION_CN.md)
 
-This guide covers installation for Claude Code, Cursor, and Cline.
+This guide covers installation for Claude Code, Cursor, Cline, and OpenClaw.
 
 ---
 
@@ -207,7 +207,7 @@ Expected output:
 
 ## 📊 Feature Comparison
 
-| Feature | Claude Code | Cursor | Cline |
+| Feature | Claude Code | Cursor | Cline | OpenClaw |
 |---------|-------------|--------|-------|
 | **Slash Commands** | ✅ `/knowfun` | ❌ | ❌ |
 | **Auto-invocation** | ✅ | ❌ | ❌ |
@@ -333,4 +333,3 @@ After installation:
 
 ---
 
-Made with ❤️ for multi-platform AI tools

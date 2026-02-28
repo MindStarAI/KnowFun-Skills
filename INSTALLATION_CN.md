@@ -2,7 +2,7 @@
 
 [English](INSTALLATION.md) | 简体中文
 
-本指南涵盖 Claude Code、Cursor 和 Cline 的安装。
+本指南涵盖 Claude Code、Cursor、Cline、OpenClaw 和 OpenClaw 的安装。
 
 ---
 
@@ -207,7 +207,7 @@ cd /path/to/knowfun-skills
 
 ## 📊 功能对比
 
-| 功能 | Claude Code | Cursor | Cline |
+| 功能 | Claude Code | Cursor | Cline | OpenClaw |
 |------|-------------|--------|-------|
 | **斜杠命令** | ✅ `/knowfun` | ❌ | ❌ |
 | **自动调用** | ✅ | ❌ | ❌ |
@@ -333,4 +333,3 @@ chmod +x $(pwd)/scripts/*.sh
 
 ---
 
-用 ❤️ 为多平台 AI 工具制作

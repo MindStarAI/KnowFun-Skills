@@ -1,4 +1,4 @@
-# Platform Comparison - Claude Code vs Cursor vs Cline
+# Platform Comparison - Claude Code vs Cursor vs Cline vs OpenClaw
 
 English | [简体中文](PLATFORM_COMPARISON_CN.md)
 
@@ -13,6 +13,7 @@ Detailed comparison of using Knowfun.io Skill across different AI coding platfor
 | **Claude Code** | Native integration | ⭐⭐⭐⭐⭐ Excellent | 🟢 Easy |
 | **Cursor** | Terminal + AI | ⭐⭐⭐⭐ Very Good | 🟡 Moderate |
 | **Cline** | Flexible workflows | ⭐⭐⭐⭐ Very Good | 🟡 Moderate |
+| **OpenClaw** | Remote + Local AI | ⭐⭐⭐⭐ Very Good | 🟡 Moderate |
 
 ---
 
@@ -20,7 +21,7 @@ Detailed comparison of using Knowfun.io Skill across different AI coding platfor
 
 ### Command System
 
-| Feature | Claude Code | Cursor | Cline |
+| Feature | Claude Code | Cursor | Cline | OpenClaw |
 |---------|-------------|--------|-------|
 | **Slash Commands** | ✅ `/knowfun` | ❌ No native support | ❌ No native support |
 | **Natural Language** | ✅ "Create a course..." | ✅ "Use knowfun CLI..." | ✅ "Create a course..." |
@@ -29,7 +30,7 @@ Detailed comparison of using Knowfun.io Skill across different AI coding platfor
 
 ### Integration Level
 
-| Aspect | Claude Code | Cursor | Cline |
+| Aspect | Claude Code | Cursor | Cline | OpenClaw |
 |--------|-------------|--------|-------|
 | **Skill System** | ✅ Native SKILL.md | ⚠️ Rules file | ⚠️ Custom config |
 | **Auto-invocation** | ✅ Description-based | ❌ Manual | ❌ Manual |
@@ -38,7 +39,7 @@ Detailed comparison of using Knowfun.io Skill across different AI coding platfor
 
 ### User Experience
 
-| Aspect | Claude Code | Cursor | Cline |
+| Aspect | Claude Code | Cursor | Cline | OpenClaw |
 |--------|-------------|--------|-------|
 | **Ease of Use** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
 | **Learning Curve** | 🟢 Low | 🟡 Medium | 🟡 Medium |
@@ -336,7 +337,7 @@ knowfun create course "Introduction to Python"
 
 ## 📊 Performance Comparison
 
-| Aspect | Claude Code | Cursor | Cline |
+| Aspect | Claude Code | Cursor | Cline | OpenClaw |
 |--------|-------------|--------|-------|
 | **Command Response** | Instant | Instant | Instant |
 | **API Call Speed** | Same | Same | Same |
@@ -393,4 +394,60 @@ This means:
 
 ---
 
-Made with ❤️ for all AI coding platforms
+
+---
+
+### OpenClaw
+
+**Strengths:**
+- ✅ **Local-first AI** - Data stays on your machine
+- ✅ **Remote access** - Control via Telegram, WhatsApp, Discord, Slack
+- ✅ **Autonomous workflows** - Self-directed task execution
+- ✅ **Persistent memory** - Remembers context across sessions
+- ✅ **Browser automation** - Can interact with web applications
+- ✅ **System integration** - Full file access and shell control
+- ✅ **Extensible** - Can write its own extensions
+
+**Limitations:**
+- ❌ No native slash commands
+- ❌ No auto-invocation (but AI interprets intent)
+- ⚠️ Requires local installation
+
+**Installation:**
+```bash
+# Install CLI
+sudo ln -s $(pwd)/scripts/knowfun-cli.sh /usr/local/bin/knowfun
+
+# Add skill definition (optional)
+cp integrations/openclaw/knowfun-skill.json ~/.openclaw/skills/
+```
+
+**Usage:**
+
+*Method 1: Terminal*
+```bash
+knowfun create course "Python Basics"
+```
+
+*Method 2: Natural Language*
+```
+"Create a Knowfun course about Python basics"
+```
+
+*Method 3: Remote via Chat*
+```
+@openclaw Create a Knowfun course about Python
+```
+
+**Best For:**
+- OpenClaw users
+- Remote content creation needs
+- Automated workflows
+- Mobile/on-the-go access
+
+**Unique Features:**
+- 📱 **Mobile Access**: Create content from your phone via chat apps
+- 🤖 **Autonomous Loops**: Can monitor and notify when tasks complete
+- 🔒 **Privacy**: Data stays local, not in cloud
+- 🔧 **Self-Improving**: Can write and install its own extensions
+

@@ -152,7 +152,7 @@ shellcheck scripts/*.sh  # if shellcheck is installed
 New features should:
 - Be documented with examples
 - Include error handling
-- Work across all platforms (Claude Code, Cursor, Cline)
+- Work across all platforms (Claude Code, Cursor, Cline, OpenClaw)
 - Be backward compatible when possible
 - Not require additional dependencies
 
@@ -332,7 +332,7 @@ shellcheck scripts/*.sh  # 如果安装了 shellcheck
 新功能应该：
 - 有文档和示例
 - 包含错误处理
-- 在所有平台上工作（Claude Code, Cursor, Cline）
+- 在所有平台上工作（Claude Code, Cursor, Cline, OpenClaw）
 - 尽可能向后兼容
 - 不需要额外的依赖
 
