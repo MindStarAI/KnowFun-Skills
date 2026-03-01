@@ -1,0 +1,69 @@
+{
+  "name": "knowfun-cli",
+  "version": "1.0.0",
+  "description": "CLI tool for Knowfun.io API - Generate educational content, posters, games, and films using AI",
+  "main": "scripts/knowfun-cli.sh",
+  "bin": {
+    "knowfun": "./scripts/knowfun-cli.sh"
+  },
+  "scripts": {
+    "test": "./scripts/test-api.sh",
+    "postinstall": "chmod +x ./scripts/knowfun-cli.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MindStarAI/KnowFun-Skills.git"
+  },
+  "keywords": [
+    "knowfun",
+    "ai",
+    "education",
+    "content-generation",
+    "course",
+    "poster",
+    "game",
+    "film",
+    "claude-code",
+    "cursor",
+    "cline",
+    "openclaw",
+    "cli",
+    "openapi"
+  ],
+  "author": "Knowfun.io Team <support@knowfun.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MindStarAI/KnowFun-Skills/issues"
+  },
+  "homepage": "https://knowfun.io",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
+  "files": [
+    "scripts/",
+    "integrations/",
+    "README.md",
+    "README_CN.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "api-reference.md",
+    "api-reference_CN.md",
+    "examples.md",
+    "examples_CN.md",
+    "QUICKSTART.md",
+    "QUICKSTART_CN.md",
+    "INSTALLATION.md",
+    "INSTALLATION_CN.md",
+    ".env.example"
+  ],
+  "preferGlobal": true,
+  "funding": {
+    "type": "individual",
+    "url": "https://knowfun.io"
+  }
+}

@@ -1,0 +1,29 @@
+# Development files
+.git/
+.github/
+.claude/
+.env
+*.log
+
+# Documentation that's not needed in npm package
+CONTRIBUTING.md
+CODE_OF_CONDUCT.md
+SECURITY.md
+PLATFORM_COMPARISON.md
+DOCS_VERIFIED.md
+FILE_STRUCTURE.txt
+LANGUAGES.md
+
+# Skill-specific files (not needed for CLI)
+SKILL.md
+skill.json
+
+# Test files
+tests/
+*.test.sh
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
