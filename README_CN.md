@@ -2,10 +2,12 @@
 
 [English](README.md) | 简体中文
 
-多平台AI编程助手集成工具，用于Knowfun.io API。支持Claude Code、Cursor和Cline，生成教育内容、海报、游戏和视频。
+多平台AI编程助手集成工具，用于Knowfun.io API。支持Claude Code、Cursor、Cline和OpenClaw，生成教育内容、海报、游戏和视频。
 
 [![许可证: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![平台](https://img.shields.io/badge/Platform-Claude%20Code%20%7C%20Cursor%20%7C%20Cline-orange.svg)](PLATFORM_COMPARISON.md)
+[![平台](https://img.shields.io/badge/Platform-Claude%20Code%20%7C%20Cursor%20%7C%20Cline%20%7C%20OpenClaw-orange.svg)](PLATFORM_COMPARISON.md)
+[![npm](https://img.shields.io/badge/npm-knowfun--cli-red.svg)](https://www.npmjs.com/package/knowfun-cli)
+[![ClawHub](https://img.shields.io/badge/ClawHub-knowfun--skills-blue.svg)](https://clawhub.ai/duguyixiaono1/knowfun-skills)
 
 ## 什么是 Knowfun.io？
 
@@ -318,7 +320,7 @@ curl -s https://api.knowfun.io/api/openapi/v1/credits/pricing \
 
 - **版本**: 1.0.0
 - **最后更新**: 2026-03-01
-- **兼容**: Claude Code CLI
+- **兼容**: Claude Code、Cursor、Cline、OpenClaw
 
 ---
 
