@@ -28,3 +28,10 @@ temp/
 
 # Test output
 test-results/
+
+# ClawHub
+.clawhub/lock.json
+package-lock.json
+
+# ClawHub install output
+skills/

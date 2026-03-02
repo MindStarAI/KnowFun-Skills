@@ -1,10 +1,28 @@
 ---
 name: knowfun
-description: Create and manage Knowfun.io content generation tasks (courses, posters, games, films) via OpenAPI. Use when user wants to generate educational content, visual materials, or interactive experiences.
-argument-hint: [command] [args]
+description: Generate educational content using Knowfun.io API - create courses, posters, games, and films with AI. Use when user wants to generate educational content, visual materials, or interactive experiences.
+argument-hint: "<command> [args]"
 disable-model-invocation: false
 user-invocable: true
-allowed-tools: Bash(curl *), Read, Write
+allowed-tools: "Bash(curl *), Read, Write"
+metadata:
+  {
+    "openclaw":
+      {
+        "emoji": "📚",
+        "requires": { "bins": ["knowfun"], "env": ["KNOWFUN_API_KEY"] },
+        "install":
+          [
+            {
+              "id": "npm",
+              "kind": "npm",
+              "package": "knowfun-cli",
+              "bins": ["knowfun"],
+              "label": "Install Knowfun CLI (npm install -g knowfun-cli)",
+            },
+          ],
+      },
+  }
 ---
 
 # Knowfun.io API Skill

@@ -47,6 +47,8 @@
   "files": [
     "scripts/",
     "integrations/",
+    "SKILL.md",
+    "skill.json",
     "README.md",
     "README_CN.md",
     "LICENSE",

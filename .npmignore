@@ -14,10 +14,6 @@ DOCS_VERIFIED.md
 FILE_STRUCTURE.txt
 LANGUAGES.md
 
-# Skill-specific files (not needed for CLI)
-SKILL.md
-skill.json
-
 # Test files
 tests/
 *.test.sh
