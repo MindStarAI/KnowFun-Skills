@@ -2,116 +2,129 @@
 
 English | [简体中文](INSTALLATION_CN.md)
 
-This guide covers installation for Claude Code, Cursor, Cline, and OpenClaw.
+Detailed installation guide for Claude Code, Cursor, Cline, and OpenClaw.
 
 ---
 
 ## 🎯 Platform Compatibility
 
-| Platform | Status | Installation Method |
-|----------|--------|---------------------|
-| **Claude Code** | ✅ Fully Supported | Native skill system |
-| **Cursor** | ✅ Supported | Rules + CLI tool |
-| **Cline** | ✅ Supported | Extension + CLI tool |
+| Platform | Status | Primary Install Method |
+|----------|--------|------------------------|
+| **Claude Code** | ✅ Fully Supported | `curl` + SKILL.md |
+| **Cursor** | ✅ Supported | `npm install -g knowfun-cli` |
+| **Cline** | ✅ Supported | `npm install -g knowfun-cli` |
+| **OpenClaw** | ✅ Supported | `npx clawhub install knowfun-skills` |
 
 ---
 
 ## 📦 Claude Code Installation
 
-### Method 1: Personal Installation (All Projects)
+Claude Code uses a native skill system. You only need to place `SKILL.md` in your skills directory.
+
+### Method 1: curl (Recommended — no cloning needed)
 
 ```bash
-# Copy to personal skills directory
 mkdir -p ~/.claude/skills/knowfun
-cp -r $(pwd)/* ~/.claude/skills/knowfun/
+curl -fsSL https://raw.githubusercontent.com/MindStarAI/KnowFun-Skills/master/SKILL.md \
+  -o ~/.claude/skills/knowfun/SKILL.md
 ```
 
-### Method 2: Project-Specific (Single Project)
+This installs the skill globally for all your Claude Code projects.
+
+### Method 2: Project-Specific
 
 ```bash
-# Copy to project directory
 mkdir -p .claude/skills/knowfun
-cp -r /path/to/knowfun-skills/* .claude/skills/knowfun/
+curl -fsSL https://raw.githubusercontent.com/MindStarAI/KnowFun-Skills/master/SKILL.md \
+  -o .claude/skills/knowfun/SKILL.md
+```
+
+### Method 3: npm (if already installed)
+
+```bash
+npm install -g knowfun-cli
+mkdir -p ~/.claude/skills/knowfun
+cp "$(npm root -g)/knowfun-cli/SKILL.md" ~/.claude/skills/knowfun/SKILL.md
 ```
 
 ### Verification
 
-```bash
-# In Claude Code, run:
+In a Claude Code session:
+```
 /knowfun credits
 ```
 
-Expected: Shows your credit balance
+Expected: Shows your credit balance.
 
 ### Usage in Claude Code
 
 ```bash
-# Create content
 /knowfun create course "Introduction to Python"
-
-# Check status
+/knowfun create poster "Climate Change Facts"
 /knowfun status <taskId>
-
-# List tasks
+/knowfun detail <taskId>
 /knowfun list
+/knowfun credits
 ```
 
 ---
 
 ## 📦 Cursor Installation
 
-Cursor doesn't have a native skill system like Claude Code, but you can use the **CLI tool** and **rules file**.
-
 ### Step 1: Install CLI Tool
 
 ```bash
-# Make the CLI tool accessible globally
-sudo ln -s $(pwd)/scripts/knowfun-cli.sh /usr/local/bin/knowfun
-
-# Or add to PATH
-echo 'export PATH="$(pwd)/scripts:$PATH"' >> ~/.zshrc
-source ~/.zshrc
+# Recommended — install from npm
+npm install -g knowfun-cli
 ```
 
-### Step 2: Configure Environment
+<details>
+<summary>Alternative: symlink from local clone</summary>
 
 ```bash
-# Set API key
+git clone https://github.com/MindStarAI/KnowFun-Skills.git
+sudo ln -s $(pwd)/KnowFun-Skills/scripts/knowfun-cli.sh /usr/local/bin/knowfun
+chmod +x KnowFun-Skills/scripts/knowfun-cli.sh
+```
+</details>
+
+### Step 2: Configure API Key
+
+```bash
 export KNOWFUN_API_KEY="kf_your_api_key_here"
 
-# Or add to ~/.zshrc for persistence
+# Persist permanently
 echo 'export KNOWFUN_API_KEY="kf_your_api_key_here"' >> ~/.zshrc
+source ~/.zshrc
 ```
 
 ### Step 3: Add Cursor Rules (Optional)
 
-Create `.cursorrules` in your project root:
-
 ```bash
-cp $(pwd)/integrations/cursor/.cursorrules .
+curl -fsSL https://raw.githubusercontent.com/MindStarAI/KnowFun-Skills/master/integrations/cursor/.cursorrules \
+  -o .cursorrules
 ```
 
 ### Verification
 
 ```bash
-# Test the CLI
 knowfun credits
 ```
 
 ### Usage in Cursor
 
-**Method 1: Use CLI in Terminal**
+**From terminal:**
 ```bash
 knowfun create course "Your topic"
 knowfun status <taskId>
 ```
 
-**Method 2: Ask Cursor to Use CLI**
+**Via natural language:**
 ```
-Hey, use the knowfun CLI to create a course about "Python basics"
+Use knowfun to create a course about Python basics
 ```
 
-Cursor will execute: `knowfun create course "Python basics"`
+Cursor will run the CLI command on your behalf.
 
 ---
 
@@ -120,23 +133,24 @@ Cursor will execute: `knowfun create course "Python basics"`
 ### Step 1: Install CLI Tool
 
 ```bash
-# Make CLI accessible
-sudo ln -s $(pwd)/scripts/knowfun-cli.sh /usr/local/bin/knowfun
+npm install -g knowfun-cli
 ```
 
 ### Step 2: Configure API Key
 
 ```bash
 export KNOWFUN_API_KEY="kf_your_api_key_here"
+
+echo 'export KNOWFUN_API_KEY="kf_your_api_key_here"' >> ~/.zshrc
+source ~/.zshrc
 ```
 
-### Step 3: Add Cline Configuration
-
-Create `.cline/knowfun.json` in your project:
+### Step 3: Add Cline Configuration (Optional)
 
 ```bash
 mkdir -p .cline
-cp $(pwd)/integrations/cline/knowfun.json .cline/
+curl -fsSL https://raw.githubusercontent.com/MindStarAI/KnowFun-Skills/master/integrations/cline/knowfun.json \
+  -o .cline/knowfun.json
 ```
 
 ### Verification
@@ -147,12 +161,59 @@ knowfun credits
 
 ### Usage in Cline
 
-Ask Cline to use the CLI:
 ```
 Create a Knowfun course about "Machine Learning basics"
 ```
 
-Cline will execute the knowfun CLI commands.
+Cline will execute the CLI commands automatically.
+
+---
+
+## 📦 OpenClaw Installation
+
+### Step 1: Install Skill
+
+```bash
+npx clawhub install knowfun-skills
+```
+
+This installs the skill to your OpenClaw workspace at `~/.openclaw/workspace/skills/knowfun-skills/`.
+
+### Step 2: Install CLI Tool
+
+OpenClaw uses the `knowfun` binary from the npm package:
+
+```bash
+npm install -g knowfun-cli
+```
+
+### Step 3: Configure API Key
+
+```bash
+export KNOWFUN_API_KEY="kf_your_api_key_here"
+
+echo 'export KNOWFUN_API_KEY="kf_your_api_key_here"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+### Verification
+
+```bash
+openclaw skills list | grep knowfun
+# Should show: ✓ ready  📚 knowfun
+```
+
+### Usage in OpenClaw
+
+**Via natural language (chat apps):**
+```
+Create a Knowfun course about Python
+```
+
+**Direct CLI:**
+```bash
+knowfun create course "Introduction to Python"
+```
 
 ---
 
@@ -167,40 +228,21 @@ Cline will execute the knowfun CLI commands.
 
 ### 2. Set Environment Variable
 
-**For all platforms:**
 ```bash
+# Temporary (current session)
 export KNOWFUN_API_KEY="kf_your_api_key_here"
-```
 
-**Permanent setup (add to shell config):**
+# Permanent — zsh (macOS default)
+echo 'export KNOWFUN_API_KEY="kf_your_api_key_here"' >> ~/.zshrc && source ~/.zshrc
 
-For zsh (macOS default):
-```bash
-echo 'export KNOWFUN_API_KEY="kf_your_api_key_here"' >> ~/.zshrc
-source ~/.zshrc
-```
-
-For bash:
-```bash
-echo 'export KNOWFUN_API_KEY="kf_your_api_key_here"' >> ~/.bashrc
-source ~/.bashrc
+# Permanent — bash
+echo 'export KNOWFUN_API_KEY="kf_your_api_key_here"' >> ~/.bashrc && source ~/.bashrc
 ```
 
 ### 3. Test Installation
 
 ```bash
-# Test API connectivity
-cd /path/to/knowfun-skills
-./scripts/test-api.sh
-```
-
-Expected output:
-```
-✓ API Key found
-✓ Schema endpoint working
-✓ Credit balance endpoint working
-✓ Pricing endpoint working
-✓ Task list endpoint working
+knowfun credits
 ```
 
 ---
@@ -208,97 +250,50 @@ Expected output:
 ## 📊 Feature Comparison
 
 | Feature | Claude Code | Cursor | Cline | OpenClaw |
-|---------|-------------|--------|-------|
-| **Slash Commands** | ✅ `/knowfun` | ❌ | ❌ |
-| **Auto-invocation** | ✅ | ❌ | ❌ |
-| **CLI Tool** | ✅ | ✅ | ✅ |
-| **Natural Language** | ✅ | ✅ | ✅ |
-| **Direct API Calls** | ✅ | ✅ | ✅ |
-
----
-
-## 🎯 Recommended Platform
-
-**For best experience**: Use **Claude Code**
-- Native `/knowfun` commands
-- Automatic skill invocation
-- Better integration with Claude's capabilities
-
-**For Cursor/Cline users**:
-- CLI tool works great
-- Can use natural language to invoke CLI
-- Same functionality, just different interface
-
----
-
-## 🚀 Quick Start by Platform
-
-### Claude Code Users
-
-```bash
-# Install
-mkdir -p ~/.claude/skills/knowfun
-cp -r * ~/.claude/skills/knowfun/
-
-# Use
-/knowfun create course "Python basics"
-```
-
-### Cursor Users
-
-```bash
-# Install CLI
-sudo ln -s $(pwd)/scripts/knowfun-cli.sh /usr/local/bin/knowfun
-
-# Use in terminal
-knowfun create course "Python basics"
-
-# Or ask Cursor
-"Use knowfun CLI to create a course about Python"
-```
-
-### Cline Users
-
-```bash
-# Install CLI
-sudo ln -s $(pwd)/scripts/knowfun-cli.sh /usr/local/bin/knowfun
-
-# Ask Cline
-"Create a Knowfun course about Python basics"
-```
+|---------|:-----------:|:------:|:-----:|:--------:|
+| Slash commands (`/knowfun`) | ✅ | ❌ | ❌ | ❌ |
+| Auto skill invocation | ✅ | ❌ | ❌ | ✅ |
+| CLI tool (`knowfun`) | ✅ | ✅ | ✅ | ✅ |
+| Natural language requests | ✅ | ✅ | ✅ | ✅ |
+| Remote access (Telegram etc.) | ❌ | ❌ | ❌ | ✅ |
+| npm install | ✅ | ✅ | ✅ | ✅ |
 
 ---
 
 ## 🆘 Troubleshooting
 
-### Issue: Command not found
+### "Command not found: knowfun"
 
-**Solution:**
 ```bash
-# Check if CLI is accessible
-which knowfun
-
-# If not found, add to PATH
-export PATH="$(pwd)/scripts:$PATH"
+npm install -g knowfun-cli
+which knowfun  # verify it's in PATH
 ```
 
-### Issue: API Key not found
+### "API Key not found"
 
-**Solution:**
 ```bash
-# Check if set
-echo $KNOWFUN_API_KEY
-
-# Set it
+echo $KNOWFUN_API_KEY   # check if set
 export KNOWFUN_API_KEY="kf_your_key"
 ```
 
-### Issue: Permission denied
+### "Permission denied" on scripts
 
-**Solution:**
 ```bash
-# Make scripts executable
-chmod +x $(pwd)/scripts/*.sh
+chmod +x $(npm root -g)/knowfun-cli/scripts/knowfun-cli.sh
+```
+
+### Claude Code skill not recognized
+
+Ensure SKILL.md is in the correct location:
+```bash
+ls ~/.claude/skills/knowfun/SKILL.md
+```
+
+If missing, reinstall:
+```bash
+mkdir -p ~/.claude/skills/knowfun
+curl -fsSL https://raw.githubusercontent.com/MindStarAI/KnowFun-Skills/master/SKILL.md \
+  -o ~/.claude/skills/knowfun/SKILL.md
 ```
 
 ---
@@ -307,29 +302,8 @@ chmod +x $(pwd)/scripts/*.sh
 
 After installation:
 
-1. **Read documentation**:
-   - English: [README.md](README.md)
-   - 中文: [README_CN.md](README_CN.md)
-
-2. **Quick start**:
-   - English: [QUICKSTART.md](QUICKSTART.md)
-   - 中文: [QUICKSTART_CN.md](QUICKSTART_CN.md)
-
-3. **API Reference**:
-   - English: [api-reference.md](api-reference.md)
-   - 中文: [api-reference_CN.md](api-reference_CN.md)
-
-4. **Examples**:
-   - English: [examples.md](examples.md)
-   - 中文: [examples_CN.md](examples_CN.md)
+1. Follow the [Quickstart Guide](QUICKSTART.md)
+2. Browse [examples.md](examples.md) for usage patterns
+3. Read [api-reference.md](api-reference.md) for advanced configuration
 
 ---
-
-## 💡 Tips
-
-- **Claude Code users**: Use `/knowfun` for best experience
-- **Cursor/Cline users**: The CLI tool provides full functionality
-- **All platforms**: Check [examples.md](examples.md) for usage patterns
-
----
-

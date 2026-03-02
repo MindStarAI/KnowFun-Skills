@@ -2,19 +2,44 @@
 
 English | [简体中文](QUICKSTART_CN.md)
 
-Get started with the Knowfun.io Claude Code Skill in 5 minutes!
+Get started with Knowfun.io in 5 minutes — works with Claude Code, Cursor, Cline, and OpenClaw.
 
-## Step 1: Install (30 seconds)
+---
 
-This skill is already installed in your project at `the knowfun-skills directory`.
+## Choose Your Platform
 
-To make it available globally in all your projects:
+| Platform | Install Method | Time |
+|----------|----------------|------|
+| **Claude Code** | `curl` + copy SKILL.md | ~1 min |
+| **Cursor / Cline** | `npm install -g knowfun-cli` | ~30 sec |
+| **OpenClaw** | `npx clawhub install knowfun-skills` | ~30 sec |
+
+---
+
+## Step 1: Install
+
+### Claude Code
 
 ```bash
-# Copy to personal skills directory
+# Install the skill globally
 mkdir -p ~/.claude/skills/knowfun
-cp -r the knowfun-skills directory* ~/.claude/skills/knowfun/
+curl -fsSL https://raw.githubusercontent.com/MindStarAI/KnowFun-Skills/master/SKILL.md \
+  -o ~/.claude/skills/knowfun/SKILL.md
 ```
+
+### Cursor / Cline
+
+```bash
+npm install -g knowfun-cli
+```
+
+### OpenClaw
+
+```bash
+npx clawhub install knowfun-skills
+```
+
+---
 
 ## Step 2: Get Your API Key (2 minutes)
 
@@ -23,191 +48,132 @@ cp -r the knowfun-skills directory* ~/.claude/skills/knowfun/
 3. Give it a name like "My Development Key"
 4. Copy the API key (starts with `kf_`)
 
+---
+
 ## Step 3: Configure (30 seconds)
 
 ```bash
-# Set your API key
+# Set for current session
 export KNOWFUN_API_KEY="kf_your_api_key_here"
 
-# Or add to your shell profile for persistence
+# Or persist permanently (recommended)
 echo 'export KNOWFUN_API_KEY="kf_your_api_key_here"' >> ~/.zshrc
 source ~/.zshrc
 ```
 
-## Step 4: Test (1 minute)
+---
 
-Run the test script to verify everything works:
+## Step 4: Verify Installation
 
 ```bash
-cd /path/to/knowfun-skills
-./scripts/test-api.sh
+knowfun credits
 ```
 
 Expected output:
 ```
-✓ API Key found
-✓ Schema endpoint working
-✓ Credit balance endpoint working
-✓ Pricing endpoint working
-✓ Task list endpoint working
+✅ Available: 1,000 credits
+📊 Total Earned: 1,000 credits
+📉 Total Used: 0 credits
 ```
 
-## Step 5: Create Your First Content (2 minutes)
-
-### In Claude Code:
-
-Simply ask Claude to create content using the skill:
-
-```
-Hey, can you create a Knowfun course about "Introduction to Python"?
-```
-
-Or invoke the skill directly:
-
-```
-/knowfun create course "Introduction to Python: Learn variables, loops, and functions"
-```
-
-### Using the CLI Tool:
-
-```bash
-./scripts/knowfun-cli.sh create course "Introduction to Python"
-```
-
-## What You Just Created
-
-Within 2-3 minutes, you'll have:
-- ✅ An interactive course with slides
-- ✅ Professional narration
-- ✅ Visual materials
-- ✅ A shareable URL
-
-Check the status:
-```bash
-./scripts/knowfun-cli.sh status <taskId>
-```
-
-Get the results:
-```bash
-./scripts/knowfun-cli.sh detail <taskId>
-```
-
-## Next Steps
-
-### Create Different Content Types
-
-**Poster:**
-```
-/knowfun create poster "Climate Change: Key facts and statistics"
-```
-
-**Game:**
-```
-/knowfun create game "Learn JavaScript: Variables and Functions"
-```
-
-**Film:**
-```
-/knowfun create film "History of the Internet"
-```
-
-### Check Your Credits
-
-```bash
-./scripts/knowfun-cli.sh credits
-```
-
-### Explore Configuration Options
-
-```bash
-./scripts/knowfun-cli.sh schema
-```
-
-## Common Tasks
-
-### Monitor a Task
-
-```bash
-# Create task and save the ID
-TASK_ID=$(./scripts/knowfun-cli.sh create course "Your topic" | grep "taskId" | cut -d'"' -f4)
-
-# Check status every 10 seconds
-watch -n 10 ./scripts/knowfun-cli.sh status $TASK_ID
-```
-
-### Batch Create Multiple Courses
-
-```bash
-for topic in "Python Basics" "JavaScript Intro" "CSS Fundamentals"; do
-    echo "Creating: $topic"
-    ./scripts/knowfun-cli.sh create course "Learn $topic"
-    sleep 2
-done
-```
-
-### View Recent Tasks
-
-```bash
-./scripts/knowfun-cli.sh list 10
-```
-
-## Documentation
-
-- **[README.md](README.md)**: Complete overview
-- **[SKILL.md](SKILL.md)**: Skill instructions for Claude
-- **[api-reference.md](api-reference.md)**: Full API documentation
-- **[examples.md](examples.md)**: 20+ usage examples
-
-## Troubleshooting
-
-### Problem: "API Key not found"
-**Solution:**
-```bash
-# Check if set
-echo $KNOWFUN_API_KEY
-
-# Set it
-export KNOWFUN_API_KEY="kf_your_key"
-```
-
-### Problem: "Insufficient credits"
-**Solution:** Visit https://www.knowfun.io/api-platform to top up
-
-### Problem: Task stuck in "processing"
-**Solution:** Wait 5-10 minutes. Tasks typically complete in:
-- Posters: 1-3 minutes
-- Courses: 2-5 minutes
-- Games: 3-7 minutes
-- Films: 5-10 minutes
-
-### Problem: "Rate limit exceeded"
-**Solution:** Wait 60 seconds and try again
-
-## Tips for Success
-
-1. **Use descriptive text**: The more context you provide, the better the results
-2. **Check credits first**: Run `./scripts/knowfun-cli.sh credits` before batch operations
-3. **Save task IDs**: Keep track of your tasks for future reference
-4. **Use callbacks**: For production, set up webhook endpoints to receive completion notifications
-5. **Start simple**: Begin with basic text, then explore advanced configurations
-
-## Getting Help
-
-- 📚 **Documentation**: See the docs in this directory
-- 🌐 **Web Portal**: https://knowfun.io
-- 🔑 **API Platform**: https://www.knowfun.io/api-platform
-- 💡 **Examples**: Check [examples.md](examples.md)
-
-## You're Ready! 🎉
-
-You now have everything you need to:
-- ✅ Create courses, posters, games, and films
-- ✅ Monitor and manage tasks
-- ✅ Track credit usage
-- ✅ Integrate with your workflows
-
-Start creating amazing educational content! 🚀
+> **Claude Code users**: run `/knowfun credits` inside a Claude Code session.
 
 ---
 
-**Need more help?** Check out the full [README.md](README.md) or [examples.md](examples.md).
+## Step 5: Create Your First Content (2 minutes)
+
+### Claude Code
+
+Ask Claude naturally:
+```
+Create a Knowfun course about "Introduction to Python"
+```
+
+Or use the slash command directly:
+```
+/knowfun create course "Introduction to Python: variables, loops, and functions"
+```
+
+### Cursor / Cline / OpenClaw
+
+```bash
+knowfun create course "Introduction to Python"
+```
+
+Or tell your AI assistant:
+```
+Use knowfun to create a course about Python basics
+```
+
+---
+
+## What Happens Next
+
+Your task will be processed in the background. Within 2–5 minutes you'll have a shareable URL.
+
+Check status:
+```bash
+knowfun status <taskId>
+```
+
+Get the result URL:
+```bash
+knowfun detail <taskId>
+```
+
+---
+
+## All Content Types
+
+```bash
+knowfun create course "Introduction to Python"
+knowfun create poster "Climate Change: Key Facts"
+knowfun create game   "Learn JavaScript Variables"
+knowfun create film   "History of the Internet"
+```
+
+Processing times: posters 1–3 min · courses 2–5 min · games 3–7 min · films 5–10 min
+
+---
+
+## Check Credits & Schema
+
+```bash
+knowfun credits   # Check your balance
+knowfun schema    # View all configuration options
+knowfun list 10   # Recent tasks
+```
+
+---
+
+## Troubleshooting
+
+### "Command not found: knowfun"
+```bash
+npm install -g knowfun-cli
+```
+
+### "API Key not found"
+```bash
+echo $KNOWFUN_API_KEY          # Check if set
+export KNOWFUN_API_KEY="kf_…"  # Set it
+```
+
+### "Insufficient credits"
+Visit https://www.knowfun.io/api-platform to top up.
+
+### Task stuck in "processing"
+Wait a few more minutes. If stuck > 15 min, contact support.
+
+---
+
+## Documentation
+
+- **[README.md](README.md)** — Complete overview
+- **[INSTALLATION.md](INSTALLATION.md)** — Detailed per-platform installation
+- **[api-reference.md](api-reference.md)** — Full API reference
+- **[examples.md](examples.md)** — 20+ usage examples
+
+---
+
+**Need more help?** Check [examples.md](examples.md) or open a [GitHub Issue](https://github.com/MindStarAI/KnowFun-Skills/issues).
