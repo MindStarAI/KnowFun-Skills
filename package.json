@@ -1,6 +1,6 @@
 {
   "name": "knowfun-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI tool for Knowfun.io API - Generate educational content, posters, games, and films using AI",
   "main": "scripts/knowfun-cli.sh",
   "bin": {
