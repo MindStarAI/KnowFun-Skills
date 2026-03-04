@@ -3,7 +3,7 @@
   "kind": "AgentSkill",
   "metadata": {
     "name": "knowfun",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Generate educational content using Knowfun.io API - create courses, posters, games, and films with AI",
     "author": "Knowfun.io Team",
     "license": "MIT",

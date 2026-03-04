@@ -318,7 +318,7 @@ curl -s https://api.knowfun.io/api/openapi/v1/credits/pricing \
 
 ## 版本
 
-- **版本**: 1.0.1
+- **版本**: 1.0.2
 - **最后更新**: 2026-03-05
 - **兼容**: Claude Code、Cursor、Cline、OpenClaw
 

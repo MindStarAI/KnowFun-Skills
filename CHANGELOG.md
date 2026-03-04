@@ -5,7 +5,7 @@ All notable changes to the Knowfun.io Claude Code Skill will be documented in th
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.1] - 2026-03-05
+## [1.0.2] - 2026-03-05
 
 ### Fixed
 - Updated all documentation to use correct npm package name `knowfun-skills` instead of `knowfun-cli`
@@ -18,6 +18,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Updated installation instructions across all platforms (Claude Code, Cursor, Cline, OpenClaw)
 - Improved OpenClaw README with npm installation as recommended method
+
+## [1.0.1] - 2026-03-04
+
+### Added
+- Initial npm package publication
+- CLI binary wrapper for multi-platform support
 
 ## [1.0.0] - 2026-03-01
 

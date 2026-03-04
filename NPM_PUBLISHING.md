@@ -43,8 +43,8 @@ npm publish --dry-run
 
 # Check package contents
 npm pack
-tar -tzf knowfun-skills-1.0.0.tgz
-rm knowfun-skills-1.0.0.tgz
+tar -tzf knowfun-skills-*.tgz
+rm knowfun-skills-*.tgz
 ```
 
 ## Step 4: Publish to npm

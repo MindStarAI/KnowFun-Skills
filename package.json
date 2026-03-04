@@ -1,6 +1,6 @@
 {
   "name": "knowfun-skills",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Knowfun.io skills for Claude Code, OpenClaw and other AI assistants - generate educational content, posters, games, and films using AI",
   "type": "module",
   "bin": {

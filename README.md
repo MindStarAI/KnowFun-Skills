@@ -310,7 +310,7 @@ Copyright (c) 2026 Knowfun.io
 
 ## Version
 
-- **Version**: 1.0.1
+- **Version**: 1.0.2
 - **Last Updated**: 2026-03-05
 - **Compatible with**: Claude Code, Cursor, Cline, OpenClaw
 
