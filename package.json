@@ -4,11 +4,11 @@
   "description": "Knowfun.io skills for Claude Code, OpenClaw and other AI assistants - generate educational content, posters, games, and films using AI",
   "type": "module",
   "bin": {
-    "knowfun": "./knowfun"
+    "knowfun": "knowfun.js"
   },
   "scripts": {
     "test": "./scripts/test-api.sh",
-    "prepare": "chmod +x ./knowfun && chmod +x ./scripts/knowfun-cli.sh"
+    "prepare": "chmod +x ./knowfun.js && chmod +x ./scripts/knowfun-cli.sh"
   },
   "repository": {
     "type": "git",
@@ -45,7 +45,7 @@
     "win32"
   ],
   "files": [
-    "knowfun",
+    "knowfun.js",
     "scripts/",
     "integrations/",
     "SKILL.md",
