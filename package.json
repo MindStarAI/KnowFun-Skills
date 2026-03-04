@@ -1,14 +1,14 @@
 {
-  "name": "knowfun-cli",
+  "name": "knowfun-skills",
   "version": "1.0.1",
-  "description": "CLI tool for Knowfun.io API - Generate educational content, posters, games, and films using AI",
-  "main": "scripts/knowfun-cli.sh",
+  "description": "Knowfun.io skills for Claude Code, OpenClaw and other AI assistants - generate educational content, posters, games, and films using AI",
+  "type": "module",
   "bin": {
-    "knowfun": "./scripts/knowfun-cli.sh"
+    "knowfun": "./knowfun"
   },
   "scripts": {
     "test": "./scripts/test-api.sh",
-    "postinstall": "chmod +x ./scripts/knowfun-cli.sh"
+    "prepare": "chmod +x ./knowfun && chmod +x ./scripts/knowfun-cli.sh"
   },
   "repository": {
     "type": "git",
@@ -45,6 +45,7 @@
     "win32"
   ],
   "files": [
+    "knowfun",
     "scripts/",
     "integrations/",
     "SKILL.md",
@@ -63,7 +64,6 @@
     "INSTALLATION_CN.md",
     ".env.example"
   ],
-  "preferGlobal": true,
   "funding": {
     "type": "individual",
     "url": "https://knowfun.io"

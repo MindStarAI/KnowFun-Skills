@@ -16,9 +16,9 @@ metadata:
             {
               "id": "npm",
               "kind": "npm",
-              "package": "knowfun-cli",
+              "package": ".",
               "bins": ["knowfun"],
-              "label": "Install Knowfun CLI (npm install -g knowfun-cli)",
+              "label": "Build knowfun skills (npm)",
             },
           ],
       },

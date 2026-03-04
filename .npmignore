@@ -2,17 +2,20 @@
 .git/
 .github/
 .claude/
+.clawhub/
 .env
 *.log
 
-# Documentation that's not needed in npm package
+# Documentation not needed in npm package
 CONTRIBUTING.md
 CODE_OF_CONDUCT.md
 SECURITY.md
 PLATFORM_COMPARISON.md
-DOCS_VERIFIED.md
-FILE_STRUCTURE.txt
 LANGUAGES.md
+NPM_PUBLISHING.md
+
+# ClawHub install cache
+skills/
 
 # Test files
 tests/
