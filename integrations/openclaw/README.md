@@ -29,14 +29,13 @@ This integration enables OpenClaw to generate educational content using Knowfun.
 ### Step 1: Install the Knowfun CLI Tool
 
 ```bash
-# Clone the repository (if not already done)
-git clone https://github.com/yourusername/knowfun-skills.git
-cd knowfun-skills
+# Install from npm (recommended)
+npm install -g knowfun-skills
 
-# Make CLI tool globally accessible
+# Or clone the repository and link manually
+git clone https://github.com/MindStarAI/KnowFun-Skills.git
+cd KnowFun-Skills
 sudo ln -s $(pwd)/scripts/knowfun-cli.sh /usr/local/bin/knowfun
-
-# Make it executable
 chmod +x scripts/knowfun-cli.sh
 ```
 
@@ -301,7 +300,7 @@ curl -X POST https://api.knowfun.io/api/openapi/v1/tasks \
 
 ## Support
 
-- **Issues**: [GitHub Issues](https://github.com/yourusername/knowfun-skills/issues)
+- **Issues**: [GitHub Issues](https://github.com/MindStarAI/KnowFun-Skills/issues)
 - **API Platform**: https://www.knowfun.io/api-platform
 - **Documentation**: https://www.knowfun.io/docs
 

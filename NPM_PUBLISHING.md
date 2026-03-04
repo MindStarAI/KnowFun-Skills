@@ -29,7 +29,7 @@ cat package.json
 ```
 
 Key fields:
-- `name`: `knowfun-cli` (must be unique on npm)
+- `name`: `knowfun-skills` (must be unique on npm)
 - `version`: `1.0.0`
 - `description`: Clear description
 - `bin`: Points to CLI script
@@ -43,8 +43,8 @@ npm publish --dry-run
 
 # Check package contents
 npm pack
-tar -tzf knowfun-cli-1.0.0.tgz
-rm knowfun-cli-1.0.0.tgz
+tar -tzf knowfun-skills-1.0.0.tgz
+rm knowfun-skills-1.0.0.tgz
 ```
 
 ## Step 4: Publish to npm
@@ -59,7 +59,7 @@ npm publish --access public
 
 If you want to publish under `@mindstarai` scope:
 
-1. Update package.json name to: `@mindstarai/knowfun-cli`
+1. Update package.json name to: `@mindstarai/knowfun-skills`
 2. Publish:
 
 ```bash
@@ -70,10 +70,10 @@ npm publish --access public
 
 ```bash
 # View on npm
-npm view knowfun-cli
+npm view knowfun-skills
 
 # Test installation
-npm install -g knowfun-cli
+npm install -g knowfun-skills
 knowfun --help
 ```
 
@@ -85,7 +85,7 @@ After publishing, update README.md with npm installation:
 ### Installation via npm
 
 \`\`\`bash
-npm install -g knowfun-cli
+npm install -g knowfun-skills
 \`\`\`
 
 Then configure your API key:
@@ -128,13 +128,13 @@ When releasing new versions:
 Choose one:
 
 ### Option A: Unscoped (simple)
-- Name: `knowfun-cli`
-- Installation: `npm install -g knowfun-cli`
+- Name: `knowfun-skills`
+- Installation: `npm install -g knowfun-skills`
 - Command: `knowfun`
 
 ### Option B: Scoped under organization
-- Name: `@mindstarai/knowfun-cli`
-- Installation: `npm install -g @mindstarai/knowfun-cli`
+- Name: `@mindstarai/knowfun-skills`
+- Installation: `npm install -g @mindstarai/knowfun-skills`
 - Command: `knowfun`
 
 ### Option C: Official Knowfun scope
@@ -147,7 +147,7 @@ Choose one:
 
 ### Name already taken
 ```bash
-npm search knowfun-cli
+npm search knowfun-skills
 ```
 If taken, try:
 - `knowfun-io`
@@ -156,7 +156,7 @@ If taken, try:
 
 ### Permission errors
 ```bash
-sudo npm install -g knowfun-cli
+sudo npm install -g knowfun-skills
 # Or fix npm permissions:
 # https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally
 ```

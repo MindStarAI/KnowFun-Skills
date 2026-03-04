@@ -29,14 +29,13 @@ OpenClaw AI助手使用Knowfun.io内容生成的集成指南。
 ### 步骤1：安装Knowfun CLI工具
 
 ```bash
-# 克隆仓库（如果尚未完成）
-git clone https://github.com/yourusername/knowfun-skills.git
-cd knowfun-skills
+# 通过 npm 安装（推荐）
+npm install -g knowfun-skills
 
-# 使CLI工具全局可访问
+# 或克隆仓库并手动链接
+git clone https://github.com/MindStarAI/KnowFun-Skills.git
+cd KnowFun-Skills
 sudo ln -s $(pwd)/scripts/knowfun-cli.sh /usr/local/bin/knowfun
-
-# 使其可执行
 chmod +x scripts/knowfun-cli.sh
 ```
 
@@ -301,7 +300,7 @@ curl -X POST https://api.knowfun.io/api/openapi/v1/tasks \
 
 ## 支持
 
-- **Issues**：[GitHub Issues](https://github.com/yourusername/knowfun-skills/issues)
+- **Issues**：[GitHub Issues](https://github.com/MindStarAI/KnowFun-Skills/issues)
 - **API平台**：https://www.knowfun.io/api-platform
 - **文档**：https://www.knowfun.io/docs
 

@@ -11,7 +11,7 @@
 | 平台 | 安装方式 | 耗时 |
 |------|----------|------|
 | **Claude Code** | `curl` 下载 SKILL.md | ~1 分钟 |
-| **Cursor / Cline** | `npm install -g knowfun-cli` | ~30 秒 |
+| **Cursor / Cline** | `npm install -g knowfun-skills` | ~30 秒 |
 | **OpenClaw** | `npx clawhub install knowfun-skills` | ~30 秒 |
 
 ---
@@ -30,7 +30,7 @@ curl -fsSL https://raw.githubusercontent.com/MindStarAI/KnowFun-Skills/master/SK
 ### Cursor / Cline
 
 ```bash
-npm install -g knowfun-cli
+npm install -g knowfun-skills
 ```
 
 ### OpenClaw
@@ -150,7 +150,7 @@ knowfun list 10   # 最近的任务
 
 ### "找不到命令：knowfun"
 ```bash
-npm install -g knowfun-cli
+npm install -g knowfun-skills
 ```
 
 ### "未找到 API Key"

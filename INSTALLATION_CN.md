@@ -11,8 +11,8 @@ Claude Code、Cursor、Cline 和 OpenClaw 的详细安装指南。
 | 平台 | 状态 | 主要安装方式 |
 |------|------|-------------|
 | **Claude Code** | ✅ 完全支持 | `curl` 下载 SKILL.md |
-| **Cursor** | ✅ 支持 | `npm install -g knowfun-cli` |
-| **Cline** | ✅ 支持 | `npm install -g knowfun-cli` |
+| **Cursor** | ✅ 支持 | `npm install -g knowfun-skills` |
+| **Cline** | ✅ 支持 | `npm install -g knowfun-skills` |
 | **OpenClaw** | ✅ 支持 | `npx clawhub install knowfun-skills` |
 
 ---
@@ -42,9 +42,9 @@ curl -fsSL https://raw.githubusercontent.com/MindStarAI/KnowFun-Skills/master/SK
 ### 方法 3：通过 npm（如果已全局安装）
 
 ```bash
-npm install -g knowfun-cli
+npm install -g knowfun-skills
 mkdir -p ~/.claude/skills/knowfun
-cp "$(npm root -g)/knowfun-cli/SKILL.md" ~/.claude/skills/knowfun/SKILL.md
+cp "$(npm root -g)/knowfun-skills/SKILL.md" ~/.claude/skills/knowfun/SKILL.md
 ```
 
 ### 验证安装
@@ -75,7 +75,7 @@ cp "$(npm root -g)/knowfun-cli/SKILL.md" ~/.claude/skills/knowfun/SKILL.md
 
 ```bash
 # 推荐 — 通过 npm 安装
-npm install -g knowfun-cli
+npm install -g knowfun-skills
 ```
 
 <details>
@@ -133,7 +133,7 @@ Cursor 会自动执行对应的 CLI 命令。
 ### 步骤 1：安装 CLI 工具
 
 ```bash
-npm install -g knowfun-cli
+npm install -g knowfun-skills
 ```
 
 ### 步骤 2：配置 API Key
@@ -184,7 +184,7 @@ npx clawhub install knowfun-skills
 OpenClaw 技能需要 `knowfun` 二进制文件：
 
 ```bash
-npm install -g knowfun-cli
+npm install -g knowfun-skills
 ```
 
 ### 步骤 3：配置 API Key
@@ -265,7 +265,7 @@ knowfun credits
 ### "找不到命令：knowfun"
 
 ```bash
-npm install -g knowfun-cli
+npm install -g knowfun-skills
 which knowfun  # 验证是否在 PATH 中
 ```
 
@@ -279,7 +279,7 @@ export KNOWFUN_API_KEY="kf_your_key"
 ### 脚本"权限被拒绝"
 
 ```bash
-chmod +x $(npm root -g)/knowfun-cli/scripts/knowfun-cli.sh
+chmod +x $(npm root -g)/knowfun-skills/scripts/knowfun-cli.sh
 ```
 
 ### Claude Code 无法识别技能

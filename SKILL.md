@@ -137,7 +137,7 @@ Each task type has specific configuration options. See [api-reference.md](api-re
 ## API Endpoints
 
 The skill uses the following base URL:
-- Production: `https://knowfun.io/openapi/v1`
+- Production: `https://api.knowfun.io`
 
 ## Examples
 

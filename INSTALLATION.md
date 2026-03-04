@@ -11,8 +11,8 @@ Detailed installation guide for Claude Code, Cursor, Cline, and OpenClaw.
 | Platform | Status | Primary Install Method |
 |----------|--------|------------------------|
 | **Claude Code** | ✅ Fully Supported | `curl` + SKILL.md |
-| **Cursor** | ✅ Supported | `npm install -g knowfun-cli` |
-| **Cline** | ✅ Supported | `npm install -g knowfun-cli` |
+| **Cursor** | ✅ Supported | `npm install -g knowfun-skills` |
+| **Cline** | ✅ Supported | `npm install -g knowfun-skills` |
 | **OpenClaw** | ✅ Supported | `npx clawhub install knowfun-skills` |
 
 ---
@@ -42,9 +42,9 @@ curl -fsSL https://raw.githubusercontent.com/MindStarAI/KnowFun-Skills/master/SK
 ### Method 3: npm (if already installed)
 
 ```bash
-npm install -g knowfun-cli
+npm install -g knowfun-skills
 mkdir -p ~/.claude/skills/knowfun
-cp "$(npm root -g)/knowfun-cli/SKILL.md" ~/.claude/skills/knowfun/SKILL.md
+cp "$(npm root -g)/knowfun-skills/SKILL.md" ~/.claude/skills/knowfun/SKILL.md
 ```
 
 ### Verification
@@ -75,7 +75,7 @@ Expected: Shows your credit balance.
 
 ```bash
 # Recommended — install from npm
-npm install -g knowfun-cli
+npm install -g knowfun-skills
 ```
 
 <details>
@@ -133,7 +133,7 @@ Cursor will run the CLI command on your behalf.
 ### Step 1: Install CLI Tool
 
 ```bash
-npm install -g knowfun-cli
+npm install -g knowfun-skills
 ```
 
 ### Step 2: Configure API Key
@@ -184,7 +184,7 @@ This installs the skill to your OpenClaw workspace at `~/.openclaw/workspace/ski
 OpenClaw uses the `knowfun` binary from the npm package:
 
 ```bash
-npm install -g knowfun-cli
+npm install -g knowfun-skills
 ```
 
 ### Step 3: Configure API Key
@@ -265,7 +265,7 @@ knowfun credits
 ### "Command not found: knowfun"
 
 ```bash
-npm install -g knowfun-cli
+npm install -g knowfun-skills
 which knowfun  # verify it's in PATH
 ```
 
@@ -279,7 +279,7 @@ export KNOWFUN_API_KEY="kf_your_key"
 ### "Permission denied" on scripts
 
 ```bash
-chmod +x $(npm root -g)/knowfun-cli/scripts/knowfun-cli.sh
+chmod +x $(npm root -g)/knowfun-skills/scripts/knowfun-cli.sh
 ```
 
 ### Claude Code skill not recognized

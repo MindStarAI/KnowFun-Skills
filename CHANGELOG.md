@@ -5,6 +5,20 @@ All notable changes to the Knowfun.io Claude Code Skill will be documented in th
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] - 2026-03-05
+
+### Fixed
+- Updated all documentation to use correct npm package name `knowfun-skills` instead of `knowfun-cli`
+- Fixed GitHub repository URLs from placeholder `yourusername` to `MindStarAI`
+- Corrected API Base URL in SKILL.md from `https://knowfun.io/openapi/v1` to `https://api.knowfun.io`
+- Unified version numbers across all documentation files
+- Updated OpenClaw integration documentation with correct repository links
+- Fixed Cline integration configuration file links
+
+### Changed
+- Updated installation instructions across all platforms (Claude Code, Cursor, Cline, OpenClaw)
+- Improved OpenClaw README with npm installation as recommended method
+
 ## [1.0.0] - 2026-03-01
 
 ### Added

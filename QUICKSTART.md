@@ -11,7 +11,7 @@ Get started with Knowfun.io in 5 minutes — works with Claude Code, Cursor, Cli
 | Platform | Install Method | Time |
 |----------|----------------|------|
 | **Claude Code** | `curl` + copy SKILL.md | ~1 min |
-| **Cursor / Cline** | `npm install -g knowfun-cli` | ~30 sec |
+| **Cursor / Cline** | `npm install -g knowfun-skills` | ~30 sec |
 | **OpenClaw** | `npx clawhub install knowfun-skills` | ~30 sec |
 
 ---
@@ -30,7 +30,7 @@ curl -fsSL https://raw.githubusercontent.com/MindStarAI/KnowFun-Skills/master/SK
 ### Cursor / Cline
 
 ```bash
-npm install -g knowfun-cli
+npm install -g knowfun-skills
 ```
 
 ### OpenClaw
@@ -150,7 +150,7 @@ knowfun list 10   # Recent tasks
 
 ### "Command not found: knowfun"
 ```bash
-npm install -g knowfun-cli
+npm install -g knowfun-skills
 ```
 
 ### "API Key not found"

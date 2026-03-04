@@ -6,7 +6,7 @@ Multi-platform AI coding assistant integration for Knowfun.io API. Generate educ
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/Platform-Claude%20Code%20%7C%20Cursor%20%7C%20Cline%20%7C%20OpenClaw-orange.svg)](PLATFORM_COMPARISON.md)
-[![npm](https://img.shields.io/badge/npm-knowfun--cli-red.svg)](https://www.npmjs.com/package/knowfun-cli)
+[![npm](https://img.shields.io/badge/npm-knowfun--skills-red.svg)](https://www.npmjs.com/package/knowfun-skills)
 [![ClawHub](https://img.shields.io/badge/ClawHub-knowfun--skills-blue.svg)](https://clawhub.ai/duguyixiaono1/knowfun-skills)
 
 ## What is Knowfun.io?
@@ -310,8 +310,8 @@ Copyright (c) 2026 Knowfun.io
 
 ## Version
 
-- **Version**: 1.0.0
-- **Last Updated**: 2026-03-01
+- **Version**: 1.0.1
+- **Last Updated**: 2026-03-05
 - **Compatible with**: Claude Code, Cursor, Cline, OpenClaw
 
 ---
