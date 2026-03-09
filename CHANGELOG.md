@@ -5,6 +5,17 @@ All notable changes to the Knowfun.io Claude Code Skill will be documented in th
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.14] - 2026-03-09
+
+### Added
+- Added metadata.keywords field with 25 accurate keywords
+- Keywords based on actual CLI capabilities (course, poster, game, film)
+- Improved ClawHub discoverability
+
+### Changed
+- Enhanced description for better clarity
+- All keywords now reflect real features only
+
 ## [1.0.13] - 2026-03-09
 
 ### Security
