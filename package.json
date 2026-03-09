@@ -1,6 +1,6 @@
 {
   "name": "knowfun-skills",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "KnowFun AI multimodal content generator - Create AI PPT/presentations, posters, interactive games, and educational films. Lightning-fast REST API for educators, content creators, and learners. Integrate with Claude Code, Cursor, Cline, OpenClaw AI assistants",
   "type": "module",
   "bin": {
@@ -71,6 +71,8 @@
     "README_CN.md",
     "LICENSE",
     "CHANGELOG.md",
+    "SECURITY.md",
+    "CLAWHUB_VERIFICATION.md",
     "api-reference.md",
     "api-reference_CN.md",
     "examples.md",
